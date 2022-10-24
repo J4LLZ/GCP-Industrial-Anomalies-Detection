@@ -2,8 +2,8 @@ create table industrial_ladle_demo.ladle_clusters_statistics as
 select 
 	CENTROID_ID,
 	STDDEV(setpoint_velocity) as velocity_std,
-	5 as num_std,
-  5 * STDDEV(setpoint_velocity) as velocity_std_threshold
+	3 as num_std,
+    3 * STDDEV(setpoint_velocity) as velocity_std_threshold
 FROM ML.PREDICT(MODEL industrial_ladle_demo.clustering_model, 
 	(
     select 
